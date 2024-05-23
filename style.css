@@ -1,0 +1,190 @@
+* {
+  /*Configurações globais*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*Medidas das caixas permanecem*/
+}
+
+:root {
+  /*Modo Light*/
+  --text-color: black; /*Cor da fonte*/
+  --bg-gradient: linear-gradient(
+    45deg,
+    white,
+    #0097b2,
+    #7ed957
+  ); /*Gradiente de fundo*/
+  --bg-button: rgba(255, 255, 255, 0.3); /*Cor do botão*/
+  --border-button: 1px solid rgba(0, 0, 0, 0.3); /*Cor da borda do botão*/
+  --hover-bg-button: rgba(255, 255, 255, 0.5); /*Fundo do hover do botão*/
+  --hover-border-button: 1px solid white; /*Borda do hover do botão*/
+  --highlight-switch: rgba(0 , 0, 0, 0.1);
+  --switch-url: url(assets/sun.svg); /*svg do switch*/
+}
+
+.dark {
+  /*Modo Dark*/
+  --text-color: white; /*Cor da fonte*/
+  --bg-gradient: linear-gradient(
+    45deg,
+    #000000,
+    #007085,
+    #56953c
+  ); /*Gradiente de fundo*/
+  --bg-button: rgba(255, 255, 255, 0.2); /*Cor do botão*/
+  --border-button: 1px solid rgba(255, 255, 255, 0.5); /*Cor da borda do botão*/
+  --hover-bg-button: rgba(255, 255, 255, 0.5); /*Fundo do hover do botão*/
+  --hover-border-button: 1.5px solid black;
+  --highlight-switch: rgba(255, 255, 255, 0.2);
+  --switch-url: url(assets/moon-stars.svg); /*svg do switch*/
+}
+
+body {
+  /*Gradiente de background*/
+  background-image: var(--bg-gradient);
+}
+
+body * {
+  /*Configurações globais do body*/
+  font-family: "Inter", sans-serif; /*Font importada do google fonts*/
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px; /*Largura do container*/
+
+  /*border: 1px solid red;*/
+
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#profile {
+  text-align: center; /*Alinhamento do texto*/
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px; /*Tamanho da caixa da imagem*/
+  border-radius: 50%;
+}
+
+#profile p {
+  /*Configurações da font*/
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+#switch {
+  /*Posicionamento do switch*/
+  position: relative; /*Torna possível o possícionamento*/
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-url) no-repeat center; /*Bola branca do botão*/
+  border: 0;
+  border-radius: 50%; /*Deixa o botão redondo*/
+
+  /*Posicionamento do switch*/
+  position: absolute; /*Torna possível o um elemento ficar em cima do outro*/
+  /*Coordenadas do posicionamento do switch*/
+  top: 50%;
+  left: 0; /*Posicição inicial do switch*/
+  z-index: 1;
+  transform: translateY(-50%);
+
+  animation: slide-back 0.2s; /*Aplicando a animação*/
+}
+
+.dark #switch button { /*Posicionamento do switch na troca*/
+  /*right: 0; - Posição final do switch
+  left: initial;*/
+  animation: slide-in 0.2s forwards; 
+  /*Aplicando a animação
+  forwards mantém as propriedades definidas no animation*/
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-switch); /*Outline executa o hover no lado de fora*/
+}
+
+#switch span {
+  /*Track do switch*/
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--bg-button);
+  border: var(--border-button);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul {
+  list-style: none; /*Tirando o estilo da lista*/
+  /*Coluna dos botões*/
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /*Espaço entre os botões*/
+  padding: 24px 0;
+}
+
+ul li a {
+  /*border: 1px solid red;*/
+  display: flex;
+  align-items: center; /*Alinhando itens verticalmente*/
+  justify-content: center; /*Alinhando itens horizontalmente*/
+  padding: 16px 24px;
+
+  /*Aparência do botão*/
+  background: var(--bg-button);
+  border: var(--border-button);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+
+  /*Configurações da fonte dos botões*/
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s; /*Torna o hover mais suave*/
+}
+
+ul li a ion-icon {
+  /*Espaço entre o ícone e a rede social*/
+  padding: 5px;
+}
+
+ul li a:hover {
+  /*Aparência do botão quando passar o mouse em cima*/
+  background: var(--hover-button);
+  border: 1.5px solid (--hover-border-button);
+}
+
+footer {
+  text-decoration: underline;
+  padding: 26px;
+  text-align: center;
+}
+
+@keyframes slide-in { /*Animação de deslizar o switch*/
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}

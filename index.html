@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+<head>
+    <!--Font do Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <!--Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="link-outline.svg" type="image/x-icon">
+    <title>K1 - Linktree</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="profile">
+            <img src="assets/profile-dark.jpg" alt="profile light">
+            <p>@kauanboy_</p>
+        </div>
+        <div id="switch" onclick="ToggleMode()">
+            <button></button>
+            <span></span>
+        </div>
+        <!--Botões das redes sociais por meio de lista-->
+        <ul>
+            <li>
+                <a href="https://instagram.com"><ion-icon name="logo-instagram"></ion-icon>Instagram</a>
+            </li>
+            <li>
+                <a href="https://facebook.com"><ion-icon name="logo-facebook"></ion-icon>Facebook</a>
+            </li>
+            <li>
+                <a href="https://linkedin.com"><ion-icon name="logo-linkedin"></ion-icon>LinkedIn</a>
+            </li>
+            <li>
+                <a href="https://github.com"><ion-icon name="logo-github"></ion-icon>Github</a>
+            </li>
+            <li>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon>Twitter</a>
+            </li>
+        </ul>
+        <footer>
+            Feito por K1.
+        </footer>
+    </div>
+    <!--Script para adicionar os ícones-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
